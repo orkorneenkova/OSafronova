@@ -1,0 +1,14 @@
+
+.courses > * { /* размер кнопки*/
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.course-item-title { /* значок Валюты*/
+    font-weight: 800;
+    font-size: 20px;
+}
+.course-item-value { /* значение курса Валют*/
+    font-size: 32px;
+    font-weight: 300;
+}
