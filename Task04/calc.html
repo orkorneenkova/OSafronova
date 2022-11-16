@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>калькулятор</title>
+    <style>
+        
+        body {
+            background: rgb(238, 207, 207); /* Цвет фона */
+            color: rgb(83, 29, 29); /* Цвет текста */
+        }
+        input, button {
+            margin-bottom: 10px;
+            border: 2px  #46383a; /* Параметры рамки */
+        }
+        button:active {
+            box-shadow: inset 0 0 5px rgba(89, 74, 74, 0.5);
+        }
+        input {
+            width: 300px;
+            text-align: center;  
+            border-radius: 10; 
+            border: 0;
+            border-radius: 5px;
+            padding: 8px 16px;
+                 
+        }
+        button {
+
+            width: 164px;
+            position: relative;
+            display: inline-block;
+            font-size: 90%;
+            font-weight: 700;
+            color: rgb(209,209,217);
+            text-decoration: none;
+            text-shadow: 0 -1px 2px rgba(0,0,0,.2);
+            padding: 8px 16px;
+            outline: none;
+            border-radius: 3px;
+            background: linear-gradient(rgb(227, 228, 236), rgb(97, 37, 74)) rgb(227, 171, 173);
+            box-shadow:
+            0 1px rgba(255,255,255,.2) inset,
+            0 3px 5px rgba(145, 69, 92, 0.5),
+            0 0 1px 1px rgba(0,1,6,.2);
+            transition: .2s ease-in-out;
+        }
+        .pressed {
+            background-color: rgb(227, 177, 177);
+        }
+
+    </style>
+    <script>
+        function plus() {
+            var x = parseInt(document.getElementById("txtX").value);
+            var y = parseInt(document.getElementById("txtY").value);
+            var z = x + y;
+            document.getElementById("txtZ").value = z;
+            document.getElementById("btnPlus").className = "pressed";
+            document.getElementById("btnMinus").className = "";
+            
+            document.querySelector('div.img-magnifier-container').innerHTML = `<img src="img/smile.jpg" width="300" height="200">`
+
+        }
+
+        function minus() {
+            var x = parseInt(document.getElementById("txtX").value);
+            var y = parseInt(document.getElementById("txtY").value);
+            var z = x - y;
+            document.getElementById("txtZ").value = z;
+            document.getElementById("btnMinus").className = "pressed";
+            document.getElementById("btnPlus").className = "";
+
+            document.querySelector('div.img-magnifier-container').innerHTML = `<img src="img/smile.jpg" width="300" height="200">`
+
+        }
+    </script>
+</head>
+<body>
+    <h1>Калькулятор OS</h1>
+    <input type="text" id="txtX" value="0" /> <br />
+    <input type="text" id="txtY" value="0" /> <br />
+    <button id="btnPlus" onclick="plus();">+</button>
+    <button id="btnMinus" onclick="minus();">-</button> <br />
+    <input type="text" id="txtZ" value="0" /> 
+
+    <div class="img-magnifier-container">
+        <!-- <img id="myimage" src="img/smile.jpg" width="300" height="200" alt="ОС"> -->
+    </div>
+</body>
+</html>
